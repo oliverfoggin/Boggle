@@ -20,7 +20,7 @@ struct ContentView: View {
                     LazyVGrid(
                         columns: [GridItem(.fixed(80)), GridItem(.fixed(80)), GridItem(.fixed(80)), GridItem(.fixed(80))],
                         alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
-                        ForEach(0 ..< 16) { i in
+                        ForEach(0 ..< viewStore.board.count) { i in
                             LetterCell(
                                 letter: viewStore.board[i],
                                 partOfWord: viewStore.currentWord.contains(i),
@@ -70,7 +70,7 @@ struct LetterCell: View {
                 .foregroundColor(.black)
                 .font(Font.title.bold())
         }
-        .frame(width: 80, height: 80, alignment: .center)
+        .aspectRatio(1, contentMode: .fill)
         .onTapGesture(perform: action)
     }
 }
