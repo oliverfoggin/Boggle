@@ -9,6 +9,39 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>BoggleEngine.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Common.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5AE4D9DD25D59FB60089C014</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5AE4D9EE25D59FB80089C014</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5AE4DA3125D5A0BB0089C014</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5AE4DA3925D5A0BB0089C014</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

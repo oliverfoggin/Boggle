@@ -3,16 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A95D1EE25D5FEDB005A5584 /* wordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95D1ED25D5FEDB005A5584 /* wordList.swift */; };
 		5AE4D9E225D59FB60089C014 /* BoggleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4D9E125D59FB60089C014 /* BoggleApp.swift */; };
 		5AE4D9E425D59FB60089C014 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4D9E325D59FB60089C014 /* ContentView.swift */; };
 		5AE4D9E625D59FB80089C014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE4D9E525D59FB80089C014 /* Assets.xcassets */; };
 		5AE4D9E925D59FB80089C014 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE4D9E825D59FB80089C014 /* Preview Assets.xcassets */; };
 		5AE4D9F425D59FB80089C014 /* BoggleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4D9F325D59FB80089C014 /* BoggleTests.swift */; };
-		5AE4D9FF25D59FB80089C014 /* BoggleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4D9FE25D59FB80089C014 /* BoggleUITests.swift */; };
+		5AE4DA1D25D59FF50089C014 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AE4DA1B25D59FF50089C014 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AE4DA2025D59FF50089C014 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE4DA1925D59FF50089C014 /* Common.framework */; };
+		5AE4DA2125D59FF50089C014 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE4DA1925D59FF50089C014 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AE4DA2A25D5A0980089C014 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE4DA2925D5A0980089C014 /* ComposableArchitecture */; };
+		5AE4DA3B25D5A0BB0089C014 /* BoggleEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE4DA3225D5A0BB0089C014 /* BoggleEngine.framework */; };
+		5AE4DA4225D5A0BB0089C014 /* BoggleEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4DA4125D5A0BB0089C014 /* BoggleEngineTests.swift */; };
+		5AE4DA4425D5A0BB0089C014 /* BoggleEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AE4DA3425D5A0BB0089C014 /* BoggleEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AE4DA4725D5A0BB0089C014 /* BoggleEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE4DA3225D5A0BB0089C014 /* BoggleEngine.framework */; };
+		5AE4DA4825D5A0BB0089C014 /* BoggleEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE4DA3225D5A0BB0089C014 /* BoggleEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AE4DA5425D5A0D10089C014 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE4DA1925D59FF50089C014 /* Common.framework */; };
+		5AE4DA5525D5A0D10089C014 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE4DA1925D59FF50089C014 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AF240D925D5A37B00C85CB4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF240D825D5A37B00C85CB4 /* Game.swift */; };
+		5AF240DD25D5D68B00C85CB4 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE4DA1925D59FF50089C014 /* Common.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,16 +36,71 @@
 			remoteGlobalIDString = 5AE4D9DD25D59FB60089C014;
 			remoteInfo = Boggle;
 		};
-		5AE4D9FB25D59FB80089C014 /* PBXContainerItemProxy */ = {
+		5AE4DA1E25D59FF50089C014 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AE4D9D625D59FB60089C014 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AE4DA1825D59FF50089C014;
+			remoteInfo = Common;
+		};
+		5AE4DA3C25D5A0BB0089C014 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AE4D9D625D59FB60089C014 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AE4DA3125D5A0BB0089C014;
+			remoteInfo = BoggleEngine;
+		};
+		5AE4DA3E25D5A0BB0089C014 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5AE4D9D625D59FB60089C014 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5AE4D9DD25D59FB60089C014;
 			remoteInfo = Boggle;
 		};
+		5AE4DA4525D5A0BB0089C014 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AE4D9D625D59FB60089C014 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AE4DA3125D5A0BB0089C014;
+			remoteInfo = BoggleEngine;
+		};
+		5AE4DA5625D5A0D10089C014 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AE4D9D625D59FB60089C014 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AE4DA1825D59FF50089C014;
+			remoteInfo = Common;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5AE4DA2525D59FF50089C014 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5AE4DA4825D5A0BB0089C014 /* BoggleEngine.framework in Embed Frameworks */,
+				5AE4DA2125D59FF50089C014 /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE4DA5825D5A0D10089C014 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5AE4DA5525D5A0D10089C014 /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5A95D1ED25D5FEDB005A5584 /* wordList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordList.swift; sourceTree = "<group>"; };
 		5AE4D9DE25D59FB60089C014 /* Boggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE4D9E125D59FB60089C014 /* BoggleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoggleApp.swift; sourceTree = "<group>"; };
 		5AE4D9E325D59FB60089C014 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,9 +110,16 @@
 		5AE4D9EF25D59FB80089C014 /* BoggleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoggleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE4D9F325D59FB80089C014 /* BoggleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoggleTests.swift; sourceTree = "<group>"; };
 		5AE4D9F525D59FB80089C014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5AE4D9FA25D59FB80089C014 /* BoggleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoggleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AE4D9FE25D59FB80089C014 /* BoggleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoggleUITests.swift; sourceTree = "<group>"; };
-		5AE4DA0025D59FB90089C014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AE4DA1925D59FF50089C014 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AE4DA1B25D59FF50089C014 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		5AE4DA1C25D59FF50089C014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AE4DA3225D5A0BB0089C014 /* BoggleEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoggleEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AE4DA3425D5A0BB0089C014 /* BoggleEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoggleEngine.h; sourceTree = "<group>"; };
+		5AE4DA3525D5A0BB0089C014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AE4DA3A25D5A0BB0089C014 /* BoggleEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoggleEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AE4DA4125D5A0BB0089C014 /* BoggleEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoggleEngineTests.swift; sourceTree = "<group>"; };
+		5AE4DA4325D5A0BB0089C014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AF240D825D5A37B00C85CB4 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE4DA4725D5A0BB0089C014 /* BoggleEngine.framework in Frameworks */,
+				5AE4DA2025D59FF50089C014 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,10 +139,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AE4D9F725D59FB80089C014 /* Frameworks */ = {
+		5AE4DA1625D59FF50089C014 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE4DA2A25D5A0980089C014 /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE4DA2F25D5A0BB0089C014 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE4DA5425D5A0D10089C014 /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE4DA3725D5A0BB0089C014 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF240DD25D5D68B00C85CB4 /* Common.framework in Frameworks */,
+				5AE4DA3B25D5A0BB0089C014 /* BoggleEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,8 +172,11 @@
 			children = (
 				5AE4D9E025D59FB60089C014 /* Boggle */,
 				5AE4D9F225D59FB80089C014 /* BoggleTests */,
-				5AE4D9FD25D59FB80089C014 /* BoggleUITests */,
+				5AE4DA1A25D59FF50089C014 /* Common */,
+				5AE4DA3325D5A0BB0089C014 /* BoggleEngine */,
+				5AE4DA4025D5A0BB0089C014 /* BoggleEngineTests */,
 				5AE4D9DF25D59FB60089C014 /* Products */,
+				5AE4DA5325D5A0D10089C014 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,7 +185,9 @@
 			children = (
 				5AE4D9DE25D59FB60089C014 /* Boggle.app */,
 				5AE4D9EF25D59FB80089C014 /* BoggleTests.xctest */,
-				5AE4D9FA25D59FB80089C014 /* BoggleUITests.xctest */,
+				5AE4DA1925D59FF50089C014 /* Common.framework */,
+				5AE4DA3225D5A0BB0089C014 /* BoggleEngine.framework */,
+				5AE4DA3A25D5A0BB0089C014 /* BoggleEngineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,16 +221,62 @@
 			path = BoggleTests;
 			sourceTree = "<group>";
 		};
-		5AE4D9FD25D59FB80089C014 /* BoggleUITests */ = {
+		5AE4DA1A25D59FF50089C014 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				5AE4D9FE25D59FB80089C014 /* BoggleUITests.swift */,
-				5AE4DA0025D59FB90089C014 /* Info.plist */,
+				5AE4DA1B25D59FF50089C014 /* Common.h */,
+				5AE4DA1C25D59FF50089C014 /* Info.plist */,
 			);
-			path = BoggleUITests;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5AE4DA3325D5A0BB0089C014 /* BoggleEngine */ = {
+			isa = PBXGroup;
+			children = (
+				5A95D1ED25D5FEDB005A5584 /* wordList.swift */,
+				5AE4DA3425D5A0BB0089C014 /* BoggleEngine.h */,
+				5AE4DA3525D5A0BB0089C014 /* Info.plist */,
+				5AF240D825D5A37B00C85CB4 /* Game.swift */,
+			);
+			path = BoggleEngine;
+			sourceTree = "<group>";
+		};
+		5AE4DA4025D5A0BB0089C014 /* BoggleEngineTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AE4DA4125D5A0BB0089C014 /* BoggleEngineTests.swift */,
+				5AE4DA4325D5A0BB0089C014 /* Info.plist */,
+			);
+			path = BoggleEngineTests;
+			sourceTree = "<group>";
+		};
+		5AE4DA5325D5A0D10089C014 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5AE4DA1425D59FF50089C014 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE4DA1D25D59FF50089C014 /* Common.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE4DA2D25D5A0BB0089C014 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE4DA4425D5A0BB0089C014 /* BoggleEngine.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		5AE4D9DD25D59FB60089C014 /* Boggle */ = {
@@ -140,10 +286,13 @@
 				5AE4D9DA25D59FB60089C014 /* Sources */,
 				5AE4D9DB25D59FB60089C014 /* Frameworks */,
 				5AE4D9DC25D59FB60089C014 /* Resources */,
+				5AE4DA2525D59FF50089C014 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5AE4DA1F25D59FF50089C014 /* PBXTargetDependency */,
+				5AE4DA4625D5A0BB0089C014 /* PBXTargetDependency */,
 			);
 			name = Boggle;
 			productName = Boggle;
@@ -168,23 +317,65 @@
 			productReference = 5AE4D9EF25D59FB80089C014 /* BoggleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5AE4D9F925D59FB80089C014 /* BoggleUITests */ = {
+		5AE4DA1825D59FF50089C014 /* Common */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5AE4DA0925D59FB90089C014 /* Build configuration list for PBXNativeTarget "BoggleUITests" */;
+			buildConfigurationList = 5AE4DA2225D59FF50089C014 /* Build configuration list for PBXNativeTarget "Common" */;
 			buildPhases = (
-				5AE4D9F625D59FB80089C014 /* Sources */,
-				5AE4D9F725D59FB80089C014 /* Frameworks */,
-				5AE4D9F825D59FB80089C014 /* Resources */,
+				5AE4DA1425D59FF50089C014 /* Headers */,
+				5AE4DA1525D59FF50089C014 /* Sources */,
+				5AE4DA1625D59FF50089C014 /* Frameworks */,
+				5AE4DA1725D59FF50089C014 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5AE4D9FC25D59FB80089C014 /* PBXTargetDependency */,
 			);
-			name = BoggleUITests;
-			productName = BoggleUITests;
-			productReference = 5AE4D9FA25D59FB80089C014 /* BoggleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = Common;
+			packageProductDependencies = (
+				5AE4DA2925D5A0980089C014 /* ComposableArchitecture */,
+			);
+			productName = Common;
+			productReference = 5AE4DA1925D59FF50089C014 /* Common.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5AE4DA3125D5A0BB0089C014 /* BoggleEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AE4DA4925D5A0BB0089C014 /* Build configuration list for PBXNativeTarget "BoggleEngine" */;
+			buildPhases = (
+				5AE4DA2D25D5A0BB0089C014 /* Headers */,
+				5AE4DA2E25D5A0BB0089C014 /* Sources */,
+				5AE4DA2F25D5A0BB0089C014 /* Frameworks */,
+				5AE4DA3025D5A0BB0089C014 /* Resources */,
+				5AE4DA5825D5A0D10089C014 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AE4DA5725D5A0D10089C014 /* PBXTargetDependency */,
+			);
+			name = BoggleEngine;
+			productName = BoggleEngine;
+			productReference = 5AE4DA3225D5A0BB0089C014 /* BoggleEngine.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5AE4DA3925D5A0BB0089C014 /* BoggleEngineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AE4DA4C25D5A0BB0089C014 /* Build configuration list for PBXNativeTarget "BoggleEngineTests" */;
+			buildPhases = (
+				5AE4DA3625D5A0BB0089C014 /* Sources */,
+				5AE4DA3725D5A0BB0089C014 /* Frameworks */,
+				5AE4DA3825D5A0BB0089C014 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AE4DA3D25D5A0BB0089C014 /* PBXTargetDependency */,
+				5AE4DA3F25D5A0BB0089C014 /* PBXTargetDependency */,
+			);
+			name = BoggleEngineTests;
+			productName = BoggleEngineTests;
+			productReference = 5AE4DA3A25D5A0BB0089C014 /* BoggleEngineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -202,9 +393,15 @@
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 5AE4D9DD25D59FB60089C014;
 					};
-					5AE4D9F925D59FB80089C014 = {
+					5AE4DA1825D59FF50089C014 = {
 						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 5AE4D9DD25D59FB60089C014;
+					};
+					5AE4DA3125D5A0BB0089C014 = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
+					};
+					5AE4DA3925D5A0BB0089C014 = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -217,13 +414,18 @@
 				Base,
 			);
 			mainGroup = 5AE4D9D525D59FB60089C014;
+			packageReferences = (
+				5AE4DA2825D5A0980089C014 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 5AE4D9DF25D59FB60089C014 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5AE4D9DD25D59FB60089C014 /* Boggle */,
 				5AE4D9EE25D59FB80089C014 /* BoggleTests */,
-				5AE4D9F925D59FB80089C014 /* BoggleUITests */,
+				5AE4DA1825D59FF50089C014 /* Common */,
+				5AE4DA3125D5A0BB0089C014 /* BoggleEngine */,
+				5AE4DA3925D5A0BB0089C014 /* BoggleEngineTests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,7 +447,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AE4D9F825D59FB80089C014 /* Resources */ = {
+		5AE4DA1725D59FF50089C014 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE4DA3025D5A0BB0089C014 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE4DA3825D5A0BB0089C014 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,11 +488,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AE4D9F625D59FB80089C014 /* Sources */ = {
+		5AE4DA1525D59FF50089C014 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AE4D9FF25D59FB80089C014 /* BoggleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE4DA2E25D5A0BB0089C014 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF240D925D5A37B00C85CB4 /* Game.swift in Sources */,
+				5A95D1EE25D5FEDB005A5584 /* wordList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE4DA3625D5A0BB0089C014 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE4DA4225D5A0BB0089C014 /* BoggleEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,10 +520,30 @@
 			target = 5AE4D9DD25D59FB60089C014 /* Boggle */;
 			targetProxy = 5AE4D9F025D59FB80089C014 /* PBXContainerItemProxy */;
 		};
-		5AE4D9FC25D59FB80089C014 /* PBXTargetDependency */ = {
+		5AE4DA1F25D59FF50089C014 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AE4DA1825D59FF50089C014 /* Common */;
+			targetProxy = 5AE4DA1E25D59FF50089C014 /* PBXContainerItemProxy */;
+		};
+		5AE4DA3D25D5A0BB0089C014 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AE4DA3125D5A0BB0089C014 /* BoggleEngine */;
+			targetProxy = 5AE4DA3C25D5A0BB0089C014 /* PBXContainerItemProxy */;
+		};
+		5AE4DA3F25D5A0BB0089C014 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5AE4D9DD25D59FB60089C014 /* Boggle */;
-			targetProxy = 5AE4D9FB25D59FB80089C014 /* PBXContainerItemProxy */;
+			targetProxy = 5AE4DA3E25D5A0BB0089C014 /* PBXContainerItemProxy */;
+		};
+		5AE4DA4625D5A0BB0089C014 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AE4DA3125D5A0BB0089C014 /* BoggleEngine */;
+			targetProxy = 5AE4DA4525D5A0BB0089C014 /* PBXContainerItemProxy */;
+		};
+		5AE4DA5725D5A0D10089C014 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AE4DA1825D59FF50089C014 /* Common */;
+			targetProxy = 5AE4DA5625D5A0D10089C014 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -415,6 +667,7 @@
 		5AE4DA0425D59FB90089C014 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -422,7 +675,7 @@
 				DEVELOPMENT_TEAM = 682PGZNNJA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Boggle/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +690,7 @@
 		5AE4DA0525D59FB90089C014 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -444,7 +698,7 @@
 				DEVELOPMENT_TEAM = 682PGZNNJA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Boggle/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,7 +718,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 682PGZNNJA;
 				INFOPLIST_FILE = BoggleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,7 +739,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 682PGZNNJA;
 				INFOPLIST_FILE = BoggleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,43 +752,152 @@
 			};
 			name = Release;
 		};
-		5AE4DA0A25D59FB90089C014 /* Debug */ = {
+		5AE4DA2325D59FF50089C014 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 682PGZNNJA;
-				INFOPLIST_FILE = BoggleUITests/Info.plist;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Common/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.BoggleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.Common;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Boggle;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		5AE4DA0B25D59FB90089C014 /* Release */ = {
+		5AE4DA2425D59FF50089C014 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 682PGZNNJA;
-				INFOPLIST_FILE = BoggleUITests/Info.plist;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Common/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.BoggleUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.Common;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5AE4DA4A25D5A0BB0089C014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 682PGZNNJA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BoggleEngine/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.BoggleEngine;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5AE4DA4B25D5A0BB0089C014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 682PGZNNJA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BoggleEngine/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.BoggleEngine;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5AE4DA4D25D5A0BB0089C014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 682PGZNNJA;
+				INFOPLIST_FILE = BoggleEngineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.BoggleEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Boggle;
+			};
+			name = Debug;
+		};
+		5AE4DA4E25D5A0BB0089C014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 682PGZNNJA;
+				INFOPLIST_FILE = BoggleEngineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverfoggin.BoggleEngineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -570,16 +931,53 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5AE4DA0925D59FB90089C014 /* Build configuration list for PBXNativeTarget "BoggleUITests" */ = {
+		5AE4DA2225D59FF50089C014 /* Build configuration list for PBXNativeTarget "Common" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5AE4DA0A25D59FB90089C014 /* Debug */,
-				5AE4DA0B25D59FB90089C014 /* Release */,
+				5AE4DA2325D59FF50089C014 /* Debug */,
+				5AE4DA2425D59FF50089C014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AE4DA4925D5A0BB0089C014 /* Build configuration list for PBXNativeTarget "BoggleEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AE4DA4A25D5A0BB0089C014 /* Debug */,
+				5AE4DA4B25D5A0BB0089C014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AE4DA4C25D5A0BB0089C014 /* Build configuration list for PBXNativeTarget "BoggleEngineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AE4DA4D25D5A0BB0089C014 /* Debug */,
+				5AE4DA4E25D5A0BB0089C014 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5AE4DA2825D5A0980089C014 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5AE4DA2925D5A0980089C014 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AE4DA2825D5A0980089C014 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5AE4D9D625D59FB60089C014 /* Project object */;
 }

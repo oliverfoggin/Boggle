@@ -1,17 +1,18 @@
-//
-//  BoggleApp.swift
-//  Boggle
-//
-//  Created by Foggin, Oliver (Developer) on 11/02/2021.
-//
-
 import SwiftUI
+import ComposableArchitecture
+import BoggleEngine
 
 @main
 struct BoggleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(
+                store: Store(
+                    initialState: GameState(),
+                    reducer: gameReducer,
+                    environment: .live
+                )
+            )
         }
     }
 }
