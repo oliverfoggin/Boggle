@@ -2,17 +2,20 @@ import UIKit
 import ComposableArchitecture
 
 public struct GameState: Equatable {
+    public var boardSize: BoardSize = .four
     public var board: [String] = []
     public var words: [String] = []
     public var currentWord: [Int] = []
     public var score: Int = 0
     
     public init(
+        boardSize: BoardSize = .four,
         board: [String] = [],
         words: [String] = [],
         currentWord: [Int] = [],
         score: Int = 0
     ) {
+        self.boardSize = boardSize
         self.board = board
         self.words = words
         self.currentWord = currentWord
@@ -21,14 +24,21 @@ public struct GameState: Equatable {
 }
 
 public enum GameAction: Equatable {
-    case newGameTapped
+    case newGameTapped(BoardSize)
+    case exitGameTapped
     case letterSelected(Int)
     case submitWordTapped
     case resetWordTapped
 }
 
+public enum BoardSize: Int, Equatable {
+    case three = 3
+    case four = 4
+    case five = 5
+}
+
 public struct GameEnvironment {
-    let newBoard: () -> [String]
+    let newBoard: (BoardSize) -> [String]
     let isValidWord: (String) -> Bool
 }
 
@@ -39,16 +49,16 @@ enum SelectionValidity {
     case outOfBounds
 }
 
-func isAdjacentTo(lastLetter: Int, selection: Int, width: Int) -> Bool {
+func isAdjacentTo(lastLetter: Int, selection: Int, boardSize: Int) -> Bool {
     return
         selection == lastLetter + 1 ||
         selection == lastLetter - 1 ||
-        selection == lastLetter + width ||
-        selection == lastLetter - width ||
-        selection == lastLetter + width + 1 ||
-        selection == lastLetter + width - 1 ||
-        selection == lastLetter - width + 1 ||
-        selection == lastLetter - width - 1
+        selection == lastLetter + boardSize ||
+        selection == lastLetter - boardSize ||
+        selection == lastLetter + boardSize + 1 ||
+        selection == lastLetter + boardSize - 1 ||
+        selection == lastLetter - boardSize + 1 ||
+        selection == lastLetter - boardSize - 1
 }
 
 func isSelectionValid(boardSize: Int, currentWord: [Int], selection: Int) -> SelectionValidity {
@@ -61,13 +71,12 @@ func isSelectionValid(boardSize: Int, currentWord: [Int], selection: Int) -> Sel
         return .valid
     }
     
-    if selection < 0 || boardSize - 1 < selection {
+    if selection < 0 || boardSize * boardSize - 1 < selection {
         return .outOfBounds
     }
     
     if let lastLetter = currentWord.last,
-       case let width = Int(sqrt(Double(boardSize))),
-       !isAdjacentTo(lastLetter: lastLetter, selection: selection, width: width) {
+       !isAdjacentTo(lastLetter: lastLetter, selection: selection, boardSize: boardSize) {
         return .notTouching
     }
     
@@ -99,8 +108,9 @@ func score(word: String) -> Int {
 
 public let gameReducer = Reducer<GameState, GameAction, GameEnvironment> { state, action, environment in
     switch action {
-    case .newGameTapped:
-        state.board = environment.newBoard()
+    case let .newGameTapped(boardSize):
+        state.boardSize = boardSize
+        state.board = environment.newBoard(boardSize)
         state.score = 0
         state.currentWord = []
         state.words = []
@@ -108,7 +118,7 @@ public let gameReducer = Reducer<GameState, GameAction, GameEnvironment> { state
         
     case let .letterSelected(selection):
         let validity = isSelectionValid(
-            boardSize: state.board.count,
+            boardSize: state.boardSize.rawValue,
             currentWord: state.currentWord,
             selection: selection
         )
@@ -142,32 +152,73 @@ public let gameReducer = Reducer<GameState, GameAction, GameEnvironment> { state
     case .resetWordTapped:
         state.currentWord = []
         return .none
+        
+    case .exitGameTapped:
+        state.board = []
+        return .none
     }
 }
 
 public extension GameEnvironment {
+    static let dice16 = [
+        ["A", "A", "E", "E", "G", "N"],
+        ["E", "L", "R", "T", "T", "Y"],
+        ["A", "O", "O", "T", "T", "W"],
+        ["A", "B", "B", "J", "O", "O"],
+        ["E", "H", "R", "T", "V", "W"],
+        ["C", "I", "M", "O", "T", "U"],
+        ["D", "I", "S", "T", "T", "Y"],
+        ["E", "I", "O", "S", "S", "T"],
+        ["D", "E", "L", "R", "V", "Y"],
+        ["A", "C", "H", "O", "P", "S"],
+        ["H", "I", "M", "N", "QU", "U"],
+        ["E", "E", "I", "N", "S", "U"],
+        ["E", "E", "G", "H", "N", "W"],
+        ["A", "F", "F", "K", "P", "S"],
+        ["H", "L", "N", "N", "R", "Z"],
+        ["D", "E", "I", "L", "R", "X"],
+    ]
+    
+    static let dice25 = [
+        ["A", "A", "A", "F", "R", "S"],
+        ["A", "A", "E", "E", "E", "E"],
+        ["A", "A", "F", "I", "R", "S"],
+        ["A", "D", "E", "N", "N", "N"],
+        ["A", "E", "E", "E", "E", "M"],
+        ["A", "E", "E", "G", "M", "U"],
+        ["A", "E", "G", "M", "N", "N"],
+        ["A", "F", "I", "R", "S", "Y"],
+        ["B", "J", "K", "QU", "X", "Z"],
+        ["C", "C", "E", "N", "S", "T"],
+        ["C", "E", "I", "I", "L", "T"],
+        ["C", "E", "I", "L", "P", "T"],
+        ["C", "E", "I", "P", "S", "T"],
+        ["D", "D", "H", "N", "O", "T"],
+        ["D", "H", "H", "L", "O", "R"],
+        ["D", "H", "L", "N", "O", "R"],
+        ["D", "H", "L", "N", "O", "R"],
+        ["E", "I", "I", "I", "T", "T"],
+        ["E", "M", "O", "T", "T", "T"],
+        ["E", "N", "S", "S", "S", "U"],
+        ["F", "I", "P", "R", "S", "Y"],
+        ["G", "O", "R", "R", "V", "W"],
+        ["I", "P", "R", "R", "R", "Y"],
+        ["N", "O", "O", "T", "U", "W"],
+        ["O", "O", "O", "T", "T", "U"],
+    ]
+    
     static let live = GameEnvironment(
-        newBoard:  {
-            [
-                ["A", "A", "E", "E", "G", "N"],
-                ["E", "L", "R", "T", "T", "Y"],
-                ["A", "O", "O", "T", "T", "W"],
-                ["A", "B", "B", "J", "O", "O"],
-                ["E", "H", "R", "T", "V", "W"],
-                ["C", "I", "M", "O", "T", "U"],
-                ["D", "I", "S", "T", "T", "Y"],
-                ["E", "I", "O", "S", "S", "T"],
-                ["D", "E", "L", "R", "V", "Y"],
-                ["A", "C", "H", "O", "P", "S"],
-                ["H", "I", "M", "N", "QU", "U"],
-                ["E", "E", "I", "N", "S", "U"],
-                ["E", "E", "G", "H", "N", "W"],
-                ["A", "F", "F", "K", "P", "S"],
-                ["H", "L", "N", "N", "R", "Z"],
-                ["D", "E", "I", "L", "R", "X"],
-            ]
-            .compactMap { $0.randomElement() }
-            .shuffled()
+        newBoard:  { size in
+            switch size {
+            case .four:
+                return dice16.compactMap { $0.randomElement() }
+                    .shuffled()
+            case .five:
+                return dice25.compactMap { $0.randomElement() }
+                    .shuffled()
+            case .three:
+                fatalError()
+            }
         },
         isValidWord: { word in
             guard word.count >= 3 else {

@@ -1,6 +1,7 @@
 import SwiftUI
 import ComposableArchitecture
 import BoggleEngine
+import Foundation
 
 struct ContentView: View {
     let store: Store<GameState, GameAction>
@@ -8,18 +9,19 @@ struct ContentView: View {
     var body: some View {
         WithViewStore(self.store) { viewStore in
             if viewStore.board.count == 0 {
-                Button("Start Game") {
-                    viewStore.send(.newGameTapped)
+                VStack {
+                    Button("Start 4x4 Game") { viewStore.send(.newGameTapped(.four)) }
+                        .padding()
+                    Button("Start 5x5 Game") { viewStore.send(.newGameTapped(.five)) }
+                        .padding()
                 }
             } else {
                 VStack {
-                    Button("New Game") {
-                        viewStore.send(.newGameTapped)
-                    }
+                    Button("Exit Game") { viewStore.send(.exitGameTapped) }
                     .padding()
                     LazyVGrid(
-                        columns: [GridItem(.fixed(80)), GridItem(.fixed(80)), GridItem(.fixed(80)), GridItem(.fixed(80))],
-                        alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+                        columns: Array.init(repeating: GridItem(.fixed(70)), count: (viewStore.boardSize == .four ? 4 : 5)),
+                        alignment: .center) {
                         ForEach(0 ..< viewStore.board.count) { i in
                             LetterCell(
                                 letter: viewStore.board[i],

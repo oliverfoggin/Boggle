@@ -6,10 +6,10 @@ class BoggleEngineTests: XCTestCase {
     
     func testFirstWord() {
         let testStore = TestStore(
-            initialState: GameState(),
+            initialState: GameState(boardSize: .three),
             reducer: gameReducer,
             environment: GameEnvironment(
-                newBoard: { [
+                newBoard: { _ in [
                     "A", "B", "C",
                     "D", "E", "F",
                     "G", "H", "I"
@@ -19,7 +19,7 @@ class BoggleEngineTests: XCTestCase {
         )
         
         testStore.assert(
-            .send(.newGameTapped) {
+            .send(.newGameTapped(.three)) {
                 $0.board = [
                     "A", "B", "C",
                     "D", "E", "F",
@@ -66,6 +66,7 @@ class BoggleEngineTests: XCTestCase {
     func testInvalidWord() {
         let testStore = TestStore(
             initialState: GameState(
+                boardSize: .three,
                 board: [
                     "A", "B", "C",
                     "D", "E", "F",
@@ -102,6 +103,7 @@ class BoggleEngineTests: XCTestCase {
     func testScoring() {
         let testStore = TestStore(
             initialState: GameState(
+                boardSize: .three,
                 board: [
                     "H", "I", "J",
                     "A", "C", "K",
@@ -111,7 +113,7 @@ class BoggleEngineTests: XCTestCase {
             ),
             reducer: gameReducer,
             environment: GameEnvironment(
-                newBoard: { [] },
+                newBoard: { _ in [] },
                 isValidWord: { _ in true }
             )
         )
@@ -285,6 +287,7 @@ class BoggleEngineTests: XCTestCase {
     func testDiagonalSelection() {
         let testStore = TestStore(
             initialState: GameState(
+                boardSize: .three,
                 board: [
                     "H", "I", "J",
                     "A", "C", "K",
@@ -293,7 +296,7 @@ class BoggleEngineTests: XCTestCase {
             ),
             reducer: gameReducer,
             environment: GameEnvironment(
-                newBoard: { [] },
+                newBoard: { _ in [] },
                 isValidWord: { _ in true }
             )
         )
